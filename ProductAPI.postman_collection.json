@@ -1,0 +1,175 @@
+{
+    "info": {
+      "name": "Product API – Felix Muriuki",
+      "_postman_id": "d34f3f0c-bb56-4bc0-bd67-felix-product-api",
+      "description": "Test collection for Felix's Week 2 Express.js Product API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Products",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/products",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products"]
+          }
+        }
+      },
+      {
+        "name": "Get Product by ID",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/products/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products", "1"]
+          }
+        }
+      },
+      {
+        "name": "Create Product",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Toaster\",\n  \"description\": \"2-slice toaster with defrost option\",\n  \"price\": 45.99,\n  \"category\": \"kitchen\",\n  \"inStock\": true\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/products",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products"]
+          }
+        }
+      },
+      {
+        "name": "Update Product",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Updated Toaster\",\n  \"description\": \"Upgraded toaster with 4 slots\",\n  \"price\": 59.99,\n  \"category\": \"kitchen\",\n  \"inStock\": true\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/products/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products", "1"]
+          }
+        }
+      },
+      {
+        "name": "Delete Product",
+        "request": {
+          "method": "DELETE",
+          "header": [
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/products/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products", "1"]
+          }
+        }
+      },
+      {
+        "name": "Search Product by Name",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/products/search?q=toaster",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products", "search"],
+            "query": [
+              {
+                "key": "q",
+                "value": "toaster"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Stats by Category",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "x-api-key",
+              "value": "123456",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/products/stats/category",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "products", "stats", "category"]
+          }
+        }
+      }
+    ]
+  }
+  
